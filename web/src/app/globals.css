@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #161616;
+  --color-secondary: #8a8a8a;
+  --font-mono: var(--font-geist-mono);
+}

@@ -1,0 +1,65 @@
+@reference "./globals.css";
+
+.markdown {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  @apply text-white;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.markdown hr {
+  border: none;
+  border-top: 1px solid var(--color-secondary);
+}
+
+.markdown p {
+  @apply text-secondary;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.markdown ul,
+.markdown ol {
+  padding-left: 1.5em;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.markdown li {
+  @apply text-secondary;
+}
+
+.markdown ul li {
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.markdown ol li {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+.markdown li + li {
+  margin-top: 4px;
+}
+
+.markdown a {
+  @apply text-white;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  opacity: 0.85;
+}
+
+.markdown a:hover {
+  opacity: 1;
+}

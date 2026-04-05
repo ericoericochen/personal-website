@@ -8,17 +8,17 @@ import markdownStyles from "./markdown.module.css";
 const locations = [
   {
     city: "NY",
-    state: "New York",
+    state: "NY",
     timezone: "America/New_York",
   },
   {
     city: "SF",
-    state: "California",
+    state: "CA",
     timezone: "America/Los_Angeles",
   },
   {
     city: "Boston",
-    state: "Massachusetts",
+    state: "MA",
     timezone: "America/New_York",
   },
 ];
@@ -31,12 +31,10 @@ export default async function Index() {
   const projects = await markdownToHtml(projectsContent);
   const commitHash = process.env.NEXT_PUBLIC_COMMIT_HASH;
 
-  console.log(projects);
-
   return (
-    <div className="bg-background w-full pt-12">
-      <div className="mx-auto flex flex-col gap-6 max-w-2xl">
-        <div className="flex w-fit flex-wrap justify-center gap-1">
+    <div className="bg-background w-full pt-8">
+      <div className="flex flex-col gap-6 mx-6 md:mx-auto md:max-w-xl">
+        <div className="no-scrollbar flex w-full flex-nowrap justify-start gap-1 overflow-x-auto md:w-fit md:flex-wrap md:justify-center [&>*]:shrink-0">
           {locations.map((location) => {
             return (
               <LocalTimeBadge

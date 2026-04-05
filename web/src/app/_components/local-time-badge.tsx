@@ -24,7 +24,7 @@ export function LocalTimeBadge({ city, state, timezone }: Props) {
 
   useEffect(() => {
     const tick = () => setNow(new Date());
-    const id = window.setInterval(tick, 60000);
+    const id = window.setInterval(tick, 5000);
     return () => window.clearInterval(id);
   }, [timezone]);
 

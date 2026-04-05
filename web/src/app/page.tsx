@@ -1,7 +1,7 @@
-import { getAboutContent, getProjectsContent } from "@/lib/api";
-import { LocalTimeBadge } from "@/app/_components/local-time-badge";
-import { Badge } from "./_components/badge";
 import markdownToHtml from "@/lib/markdownToHtml";
+import { getAboutContent, getProjectsContent } from "@/lib/api";
+import { Badge } from "@/app/_components/badge";
+import { LocalTimeBadge } from "@/app/_components/local-time-badge";
 
 import markdownStyles from "./markdown.module.css";
 
@@ -29,7 +29,10 @@ export default async function Index() {
 
   const aboutMe = await markdownToHtml(aboutContent);
   const projects = await markdownToHtml(projectsContent);
-  const commitHash = process.env.NEXT_PUBLIC_COMMIT_HASH;
+  const commitHash =
+    process.env.NEXT_PUBLIC_COMMIT_HASH || process.env.VERCEL_GIT_COMMIT_SHA;
+
+  // console.log("sha: ", commitHash);
 
   return (
     <div className="bg-background w-full pt-8">
